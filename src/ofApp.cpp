@@ -15,7 +15,9 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    std::stringstream strm;
+	strm << "fps: " << ofGetFrameRate();
+	ofSetWindowTitle(strm.str());
 }
 
 //--------------------------------------------------------------
@@ -31,7 +33,7 @@ void ofApp::draw(){
 
 // genie circles
 void ofApp::genieCircles(float time){
-    for (int i = 0; i < 600; i++){
+    for (int i = 0; i < 900; i++){
         ofSetColor(
             127 + 127 * sin(i * .02 + time),
             127 + 127 * sin(i * .021 + time),
@@ -39,7 +41,7 @@ void ofApp::genieCircles(float time){
         ofDrawCircle(
             ofGetWindowWidth()/2 + (100 * sin(i * .02 + time)),
             50 + i,
-            (ofGetWidth()*0.03) * (1 + sin(i * .005 + time)) 
+            (ofGetWidth()*0.025) * (1 + sin(i * .005 + time)) 
         );
     }
 }
